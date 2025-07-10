@@ -50,7 +50,7 @@
         inherit (self.checks.${system}.pre-commit-check) shellHook;
 
         name = "liskvork";
-        inputsFrom = pkgs.lib.attrsets.attrValues packages;
+        inputsFrom = [self.packages.${system}.liskvork];
         packages = with pkgs; [
           zls
         ];
